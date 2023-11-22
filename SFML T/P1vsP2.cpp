@@ -14,6 +14,13 @@ void P1vsP2(sf::RenderWindow &w, sf::Text& text, sf::Text& title, sf::Font& font
     p1.setStyle(sf::Text::Bold);
     sf::Text x1, x2, x3, x4, x5, x6, x7, x8, x9;
 
+    sf::Text menu;
+    menu.setFont(font);
+    menu.setPosition(130.f, 850.f);
+    menu.setCharacterSize(65);
+    menu.setFillColor(sf::Color::White);
+    menu.setStyle(sf::Text::Bold);
+
     sf::RectangleShape winningLine1(sf::Vector2f(700.0f, 20.0f)); winningLine1.setPosition(9990.f, 9990.f); winningLine1.setFillColor(sf::Color::Green);
     sf::RectangleShape winningLine2(sf::Vector2f(20.0f, 650.0f)); winningLine2.setPosition(9990.f, 9990.f); winningLine2.setFillColor(sf::Color::Green);
     sf::RectangleShape winningLine3(sf::Vector2f(850.0f, 20.0f)); winningLine3.setPosition(9990.f, 9990.f); winningLine3.rotate(40); winningLine3.setFillColor(sf::Color::Green);
@@ -187,75 +194,81 @@ void P1vsP2(sf::RenderWindow &w, sf::Text& text, sf::Text& title, sf::Font& font
                     }
                 }
                 break;
+                case sf::Event::TextEntered:
+                    if (eve.text.unicode == 48) {
+                        return;
+                    }
+                    break;
             default:
                 break;
             }
         }
 
         if (x1.getString() == "X" && x2.getString() == "X" && x3.getString() == "X") {
-            winningLine1.setPosition(135.f, 110.f); p1.setString("P1 Wins!"); p1.setPosition(270.f, 700.f);
+            winningLine1.setPosition(135.f, 110.f); p1.setString("P1 Wins!"); p1.setPosition(270.f, 700.f); menu.setString("0: Return to Main Menu");
         }
         if (x1.getString() == "O" && x2.getString() == "O" && x3.getString() == "O") {
-            winningLine1.setPosition(135.f, 110.f); p1.setString("P2 Wins!"); p1.setPosition(270.f, 700.f);
+            winningLine1.setPosition(135.f, 110.f); p1.setString("P2 Wins!"); p1.setPosition(270.f, 700.f); menu.setString("0: Return to Main Menu");
         }
 
         if (x4.getString() == "X" && x5.getString() == "X" && x6.getString() == "X") {
-            winningLine1.setPosition(135.f, 300.f); p1.setString("P1 Wins!"); p1.setPosition(270.f, 700.f);
+            winningLine1.setPosition(135.f, 300.f); p1.setString("P1 Wins!"); p1.setPosition(270.f, 700.f); menu.setString("0: Return to Main Menu");
         }
         if (x4.getString() == "O" && x5.getString() == "O" && x6.getString() == "O") {
-            winningLine1.setPosition(135.f, 300.f); p1.setString("P2 Wins!"); p1.setPosition(270.f, 700.f);
+            winningLine1.setPosition(135.f, 300.f); p1.setString("P2 Wins!"); p1.setPosition(270.f, 700.f); menu.setString("0: Return to Main Menu");
         }
 
         if (x7.getString() == "X" && x8.getString() == "X" && x9.getString() == "X") {
-            winningLine1.setPosition(135.f, 510.f); p1.setString("P1 Wins!"); p1.setPosition(270.f, 700.f);
+            winningLine1.setPosition(135.f, 510.f); p1.setString("P1 Wins!"); p1.setPosition(270.f, 700.f); menu.setString("0: Return to Main Menu");
         }
         if (x7.getString() == "O" && x8.getString() == "O" && x9.getString() == "O") {
-            winningLine1.setPosition(135.f, 510.f); p1.setString("P2 Wins!"); p1.setPosition(270.f, 700.f);
+            winningLine1.setPosition(135.f, 510.f); p1.setString("P2 Wins!"); p1.setPosition(270.f, 700.f); menu.setString("0: Return to Main Menu");
         }
 
 
         if (x1.getString() == "X" && x6.getString() == "X" && x7.getString() == "X") {
-            winningLine2.setPosition(235.f, 20.f); p1.setString("P1 Wins!"); p1.setPosition(270.f, 700.f);
+            winningLine2.setPosition(235.f, 20.f); p1.setString("P1 Wins!"); p1.setPosition(270.f, 700.f); menu.setString("0: Return to Main Menu");
         }
         if (x1.getString() == "O" && x6.getString() == "O" && x7.getString() == "O") {
-            winningLine2.setPosition(235.f, 20.f); p1.setString("P2 Wins!"); p1.setPosition(270.f, 700.f);
+            winningLine2.setPosition(235.f, 20.f); p1.setString("P2 Wins!"); p1.setPosition(270.f, 700.f); menu.setString("0: Return to Main Menu");
         }
 
         if (x2.getString() == "X" && x5.getString() == "X" && x8.getString() == "X") {
-            winningLine2.setPosition(465.f, 20.f); p1.setString("P1 Wins!"); p1.setPosition(270.f, 700.f);
+            winningLine2.setPosition(465.f, 20.f); p1.setString("P1 Wins!"); p1.setPosition(270.f, 700.f); menu.setString("0: Return to Main Menu");
         }
         if (x2.getString() == "O" && x5.getString() == "O" && x8.getString() == "O") {
-            winningLine2.setPosition(470.f, 20.f); p1.setString("P2 Wins!"); p1.setPosition(270.f, 700.f);
+            winningLine2.setPosition(470.f, 20.f); p1.setString("P2 Wins!"); p1.setPosition(270.f, 700.f); menu.setString("0: Return to Main Menu");
         }
 
         if (x3.getString() == "X" && x4.getString() == "X" && x9.getString() == "X") {
-            winningLine2.setPosition(715.f, 20.f); p1.setString("P1 Wins!"); p1.setPosition(270.f, 700.f);
+            winningLine2.setPosition(715.f, 20.f); p1.setString("P1 Wins!"); p1.setPosition(270.f, 700.f); menu.setString("0: Return to Main Menu");
         }
         if (x3.getString() == "O" && x4.getString() == "O" && x9.getString() == "O") {
-            winningLine2.setPosition(715.f, 20.f); p1.setString("P2 Wins!"); p1.setPosition(270.f, 700.f);
+            winningLine2.setPosition(715.f, 20.f); p1.setString("P2 Wins!"); p1.setPosition(270.f, 700.f); menu.setString("0: Return to Main Menu");
         }
 
         if (x1.getString() == "X" && x5.getString() == "X" && x9.getString() == "X") {
-            winningLine3.setPosition(150.f, 20.f); p1.setString("P1 Wins!"); p1.setPosition(270.f, 700.f);
+            winningLine3.setPosition(150.f, 20.f); p1.setString("P1 Wins!"); p1.setPosition(270.f, 700.f); menu.setString("0: Return to Main Menu");
         }
         if (x1.getString() == "O" && x5.getString() == "O" && x9.getString() == "O") {
-            winningLine3.setPosition(150.f, 20.f); p1.setString("P2 Wins!"); p1.setPosition(270.f, 700.f);
+            winningLine3.setPosition(150.f, 20.f); p1.setString("P2 Wins!"); p1.setPosition(270.f, 700.f); menu.setString("0: Return to Main Menu");
         }
         if (x3.getString() == "X" && x5.getString() == "X" && x7.getString() == "X") {
-            winningLine4.setPosition(810.f, 50.f); p1.setString("P1 Wins!"); p1.setPosition(270.f, 700.f);
+            winningLine4.setPosition(810.f, 50.f); p1.setString("P1 Wins!"); p1.setPosition(270.f, 700.f); menu.setString("0: Return to Main Menu");
         }
         if (x3.getString() == "O" && x5.getString() == "O" && x7.getString() == "O") {
-            winningLine4.setPosition(810.f, 50.f); p1.setString("P2 Wins!"); p1.setPosition(270.f, 700.f);
+            winningLine4.setPosition(810.f, 50.f); p1.setString("P2 Wins!"); p1.setPosition(270.f, 700.f); menu.setString("0: Return to Main Menu");
         }
 
 
         if (x1.getString() != "" && x2.getString() != "" && x3.getString() != "" && x4.getString() != "" && x5.getString() != "" && x6.getString() != "" && x7.getString() != "" && x8.getString() != "" && x9.getString() != "" && (p1.getString() == "P1 Turn" || p1.getString() == "P2 Turn")) {
-            p1.setString("It's A Tie!"); p1.setPosition(260.f, 700.f);
+            p1.setString("It's A Tie!"); p1.setPosition(260.f, 700.f); menu.setString("0: Return to Main Menu");
         }
+
 
         w.clear();
         w.draw(p1); w.draw(x1); w.draw(x2);  w.draw(x3);  w.draw(x4);  w.draw(x5);  w.draw(x6);  w.draw(x7);  w.draw(x8);  w.draw(x9);
-        w.draw(winningLine1); w.draw(winningLine2); w.draw(winningLine3); w.draw(winningLine4);
+        w.draw(winningLine1); w.draw(winningLine2); w.draw(winningLine3); w.draw(winningLine4); w.draw(menu);
         board(w);
     }
 }
