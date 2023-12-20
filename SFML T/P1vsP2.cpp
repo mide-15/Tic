@@ -20,6 +20,7 @@ void P1vsP2(sf::RenderWindow &w, sf::Text& text, sf::Text& title, sf::Font& font
     menu.setCharacterSize(65);
     menu.setFillColor(sf::Color::White);
     menu.setStyle(sf::Text::Bold);
+    menu.setString("0: Return to Main Menu");
 
     sf::RectangleShape winningLine1(sf::Vector2f(700.0f, 20.0f)); winningLine1.setPosition(9990.f, 9990.f); winningLine1.setFillColor(sf::Color::Green);
     sf::RectangleShape winningLine2(sf::Vector2f(20.0f, 650.0f)); winningLine2.setPosition(9990.f, 9990.f); winningLine2.setFillColor(sf::Color::Green);
