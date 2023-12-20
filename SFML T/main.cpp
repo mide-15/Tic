@@ -50,7 +50,7 @@ int main()
             }
         }
         w.clear();
-        w.draw(title); w.draw(singleplayer);  w.draw(multiplayer);
+        w.draw(title); /*w.draw(singleplayer);*/  w.draw(multiplayer);
         w.display();
     }
     return 0;
